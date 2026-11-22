@@ -28,10 +28,10 @@
 */
 
 /* Color correction */
-#define NL_TONEMAP_TYPE 3              // 1:Exponential, 2:Reinhard, 3:Extended Reinhard, 4:ACES
+#define NL_TONEMAP_TYPE 4              // 1:Exponential, 2:Reinhard, 3:Extended Reinhard, 4:ACES
 #define NL_GAMMA 1.33                  // 0.3 low ~ 2.0 high
-//#define NL_EXPOSURE 1.3              // [toggle] 0.5 dark ~ 3.0 bright
-//#define NL_SATURATION 1.4            // [toggle] 0.0 grayscale ~ 4.0 super saturated
+#define NL_EXPOSURE 1.15               // [toggle] 0.5 dark ~ 3.0 bright
+#define NL_SATURATION 1.25            // [toggle] 0.0 grayscale ~ 4.0 super saturated
 //#define NL_TINT                      // [toggle] enable light/dark tone tinting
 #define NL_TINT_LOW  vec3(0.3,0.5,1.4) // color tint for dark tone
 #define NL_TINT_HIGH vec3(1.4,0.7,0.3) // color tint for light tone
@@ -117,8 +117,8 @@
 /* Per-pixel water (waves, fresnel and sun glint for every pixel instead of every block corner) */
 #define NLX_PIXEL_WATER                 // [toggle] per-pixel water
 #define NLX_WATER_WAVE_STRENGTH 0.45    // 0.1 calm ~ 1.0 choppy
-#define NLX_WATER_GLINT 5.0             // 0.0 off ~ 10.0 blinding sun glint
-#define NLX_WATER_GLINT_SHARPNESS 500.0 // 100.0 wide ~ 1500.0 tiny glint
+#define NLX_WATER_GLINT 8.0             // 0.0 off ~ 10.0 blinding sun glint
+#define NLX_WATER_GLINT_SHARPNESS 350.0 // 100.0 wide ~ 1500.0 tiny glint
 
 /* Underwater */
 #define NL_UNDERWATER_BRIGHTNESS 0.8         // 0.0 dark ~ 3.0 bright
@@ -128,7 +128,7 @@
 #define NL_UNDERWATER_TINT vec3(0.9,1.0,0.9) // fog tint color when underwater
 
 /* Cloud type */
-#define NL_CLOUD_TYPE 1 // 0:vanilla, 1:soft, 2:rounded, 3:realistic
+#define NL_CLOUD_TYPE 3 // 0:vanilla, 1:soft, 2:rounded, 3:realistic
 
 /* Vanilla cloud settings - make sure to remove clouds.png when using this */
 #define NL_CLOUD0_THICKNESS 2.1      // 0.5 slim ~ 8.0 fat
@@ -202,7 +202,7 @@
 #define NL_MOON_TILT       45.0 // 0.0 no tilt ~ 90.0 tilt of 90 degrees
 
 /* Fake godrays during sunrise/sunset */
-//#define NL_GODRAY 0.3 // [toggle] 0.1 subtle ~ 0.8 strong
+#define NL_GODRAY 0.4   // [toggle] 0.1 subtle ~ 0.8 strong
 
 /* Sky reflection */
 //#define NL_GROUND_REFL 0.4       // [toggle] 0.2 slightly reflective ~ 1.0 fully reflect sky
