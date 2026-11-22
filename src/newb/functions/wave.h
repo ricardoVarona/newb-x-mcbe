@@ -153,7 +153,7 @@ void nlWave(
       float wave = NL_PLANTS_WAVE*windStrength;
 
       if (isTreeLeaves) {
-        wave *= 0.5;
+        wave *= 0.8;
       } else if (isVines) {
         wave *= fract(0.01+tiledCpos.y*0.5);
       } else if (isPlants && isColored && !isTop) {
@@ -168,8 +168,11 @@ void nlWave(
         sin(t*NL_WAVE_SPEED*1.5 + phaseDiff),
         rainFactor);
 
+      // z moves at a different speed than x so plants sway in loops instead of along one diagonal line
+      float waveZ = wave*(0.7 + 0.3*sin(t*NL_WAVE_SPEED*0.7 + phaseDiff*1.7));
+
       //worldPos.y -= 1.0-sqrt(1.0-wave*wave);
-      worldPos.xyz -= vec3(wave, wave*wave*0.5, wave);
+      worldPos.xyz -= vec3(wave, wave*wave*0.5, waveZ);
     }
   #endif
 
