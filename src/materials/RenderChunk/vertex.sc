@@ -2,7 +2,7 @@ $input a_color0, a_position, a_texcoord0, a_texcoord1
 #ifdef INSTANCING
   $input i_data0, i_data1, i_data2, i_data3
 #endif
-$output v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra
+$output v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra, v_wpos, v_wgeo, v_sun
 
 #include <bgfx_shader.sh>
 #include <newb/main.sh>
@@ -186,6 +186,17 @@ void main() {
   v_color0 = color;
   v_color1 = a_color0;
   v_fog = fogColor;
+
+  // per-pixel water: direction to the camera, wave coordinates, and where the sun (or moon) glint comes from
+  v_wpos = vec4(modelCamPos, t);
+  v_wgeo = vec4(gPos.xz, bPos.y > 0.0 ? 1.0 : 0.0, lit.y);
+  bool sunUp = env.sunDir.y > 0.0;
+  float glintVis = sunUp ? smoothstep(0.0, 0.15, env.sunDir.y) : 0.15*smoothstep(0.0, 0.15, env.moonDir.y);
+  glintVis *= (1.0 - env.rainFactor)*lit.y*lit.y;
+  if (env.end || env.nether || env.underwater) {
+    glintVis = 0.0;
+  }
+  v_sun = vec4(sunUp ? env.sunDir : env.moonDir, glintVis);
 
   #else
 
