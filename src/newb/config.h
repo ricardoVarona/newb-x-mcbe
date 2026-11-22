@@ -99,11 +99,11 @@
 //#define NL_GLOW_LEAK 0.6        // [toggle] 0.08 subtle ~ 1.0 100% brightness of NL_GLOW_TEX
 
 /* Waving */
-#define NL_PLANTS_WAVE 0.05    // [toggle] 0.02 gentle ~ 0.4 violent
+#define NL_PLANTS_WAVE 0.14    // [toggle] 0.02 gentle ~ 0.4 violent
 #define NL_LANTERN_WAVE 0.16   // [toggle] 0.05 subtle ~ 0.4 large swing
-#define NL_WAVE_SPEED 2.8      // 0.5 slow wave ~ 5.0 very fast wave
+#define NL_WAVE_SPEED 2.2      // 0.5 slow wave ~ 5.0 very fast wave
 //#define NL_EXTRA_PLANTS_WAVE // [toggle] !dont use! wave using texture coords (1.21.0 vanilla 2048x1024)
-#define NL_WAVE_RANGE 13.0     // 6.0 upto 6 blocks ~ 32.0 upto 32 blocks away (slower)
+#define NL_WAVE_RANGE 24.0     // 6.0 upto 6 blocks ~ 32.0 upto 32 blocks away (slower)
 
 /* Water */
 #define NL_WATER_TRANSPARENCY 0.7 // 0.0 transparent ~ 1.0 normal
@@ -128,7 +128,7 @@
 #define NL_UNDERWATER_TINT vec3(0.9,1.0,0.9) // fog tint color when underwater
 
 /* Cloud type */
-#define NL_CLOUD_TYPE 3 // 0:vanilla, 1:soft, 2:rounded, 3:realistic
+#define NL_CLOUD_TYPE 1 // 0:vanilla, 1:soft, 2:rounded, 3:realistic
 
 /* Vanilla cloud settings - make sure to remove clouds.png when using this */
 #define NL_CLOUD0_THICKNESS 2.1      // 0.5 slim ~ 8.0 fat
@@ -168,7 +168,7 @@
 #define NL_CLOUD3_SHADOW_OFFSET 0.3      // 0.05 minimal ~ 1.0 large
 
 /* Aurora settings */
-#define NL_AURORA 1.2           // [toggle] 0.4 dim ~ 4.0 very bright
+#define NL_AURORA 0.5           // [toggle] 0.4 dim ~ 4.0 very bright
 #define NL_AURORA_VELOCITY 0.03 // 0.0 static ~ 0.3 very fast
 #define NL_AURORA_SCALE 0.04    // 0.002 large ~ 0.4 tiny
 #define NL_AURORA_WIDTH 0.18    // 0.04 thin line ~ 0.4 thick lines
