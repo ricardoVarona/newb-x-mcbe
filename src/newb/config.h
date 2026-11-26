@@ -32,6 +32,7 @@
 #define NL_GAMMA 1.33                  // 0.3 low ~ 2.0 high
 #define NL_EXPOSURE 1.15               // [toggle] 0.5 dark ~ 3.0 bright
 #define NL_SATURATION 1.25            // [toggle] 0.0 grayscale ~ 4.0 super saturated
+#define NLX_ORANGE_TAME 0.3            // [toggle] 0.0 off ~ 1.0 oranges fully gray, other colors untouched
 //#define NL_TINT                      // [toggle] enable light/dark tone tinting
 #define NL_TINT_LOW  vec3(0.3,0.5,1.4) // color tint for dark tone
 #define NL_TINT_HIGH vec3(1.4,0.7,0.3) // color tint for light tone
@@ -54,7 +55,7 @@
 #define NL_NIGHT_MOONLIGHT_COL vec3(0.01,0.03,0.2)
 
 /* Torch colors */
-#define NL_OVERWORLD_TORCH_COL  vec3(1.0,0.52,0.18)
+#define NL_OVERWORLD_TORCH_COL  vec3(1.0,0.58,0.26)
 #define NL_UNDERWATER_TORCH_COL vec3(1.0,0.52,0.18)
 #define NL_NETHER_TORCH_COL     vec3(1.0,0.52,0.18)
 #define NL_END_TORCH_COL        vec3(1.0,0.52,0.18)

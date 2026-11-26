@@ -37,6 +37,15 @@ vec3 colorCorrection(vec3 col) {
     col = mix(vec3_splat(luminance(col)), col, NL_SATURATION);
   #endif
 
+  #ifdef NLX_ORANGE_TAME
+    // pull orange colors (hue about 7 to 47 degrees) toward gray, other hues stay as they are
+    float maxChannel = max(col.r, max(col.g, col.b));
+    float chroma = maxChannel - min(col.r, min(col.g, col.b));
+    float hue = (col.g - col.b)/max(chroma, 0.0001);   // 0.0 red ~ 1.0 yellow when red is the biggest channel
+    float orange = step(maxChannel, col.r)*clamp(1.0 - 3.0*abs(hue - 0.45), 0.0, 1.0);
+    col = mix(vec3_splat(luminance(col)), col, 1.0 - NLX_ORANGE_TAME*orange);
+  #endif
+
   #ifdef NL_TINT
     col *= mix(NL_TINT_LOW, NL_TINT_HIGH, col);
   #endif
